@@ -123,9 +123,9 @@ a.secondary {
 }
 
 @media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+  // .logo {
+  //   filter: invert();
+  // }
 
   .page {
     --background: #000;
