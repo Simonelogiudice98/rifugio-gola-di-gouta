@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rifugio Gola di Gouta",
   description: "Sito ufficiale del Rifugio Gola di Gouta...",
+  icons: {
+    icon: [{ url: "/images/logo.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
