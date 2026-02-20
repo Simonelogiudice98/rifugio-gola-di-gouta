@@ -1,0 +1,259 @@
+$teal-dark:  #0d5c63;
+$teal-light: #4aadaa;
+$cream:      #e8e4df;
+$white:      #ffffff;
+$black:      #0a0a0a;
+
+$slide-duration:    6000ms;
+$fade-duration:     1200ms;
+$ken-burns-scale:   1.08;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: $black;
+  display: flex;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale($ken-burns-scale);
+  transition:
+    opacity $fade-duration ease-in-out,
+    transform ($slide-duration + $fade-duration) ease-out;
+  will-change: opacity, transform;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+
+  &.leaving {
+    opacity: 0;
+    z-index: 2;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    135deg,
+    rgba($black, 0.72) 0%,
+    rgba($teal-dark, 0.45) 50%,
+    rgba($black, 0.30) 100%
+  );
+}
+
+.diagonalAccent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 4;
+  background: linear-gradient(
+    to bottom-left,
+    rgba($teal-light, 0.08) 0%,
+    transparent 60%
+  );
+  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  padding-left: clamp(2rem, 8vw, 8rem);
+  max-width: 780px;
+  animation: contentReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrowText {
+  color: $teal-light !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.line {
+  display: block;
+  height: 1px;
+  background: $teal-light;
+  opacity: 0.6;
+
+  &:first-child { width: 32px; }
+  &:last-child  { width: 80px; }
+}
+
+.title {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: clamp(3rem, 9vw, 7.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.02em !important;
+  color: $white !important;
+  text-transform: uppercase;
+  margin-bottom: 0.1em !important;
+}
+
+.titleAccent {
+  color: $teal-light;
+  display: block;
+  -webkit-text-stroke: 0px;
+
+  text-shadow:
+    0 0 60px rgba($teal-light, 0.4),
+    0 4px 24px rgba($black, 0.5);
+}
+
+.subtitle {
+  color: rgba($cream, 0.88) !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem) !important;
+  line-height: 1.7 !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 2.5rem !important;
+  font-style: italic;
+  max-width: 480px;
+}
+
+.ctas {
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  background-color: $teal-light !important;
+  color: $white !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0.85rem 2rem !important;
+  border-radius: 2px !important;
+  border: 2px solid $teal-light !important;
+  transition: all 0.25s ease !important;
+
+  &:hover {
+    background-color: $teal-dark !important;
+    border-color: $teal-dark !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba($teal-light, 0.35) !important;
+  }
+}
+
+.btnSecondary {
+  color: $cream !important;
+  border-color: rgba($cream, 0.5) !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0.85rem 2rem !important;
+  border-radius: 2px !important;
+  border-width: 2px !important;
+  transition: all 0.25s ease !important;
+
+  &:hover {
+    border-color: $cream !important;
+    background-color: rgba($cream, 0.08) !important;
+    transform: translateY(-2px);
+  }
+}
+
+.indicators {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 28px;
+  height: 3px;
+  border: none;
+  background: rgba($white, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+
+  &:hover {
+    background: rgba($white, 0.6);
+  }
+}
+
+.dotActive {
+  background: $teal-light !important;
+  width: 48px;
+}
+
+.scrollCue {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: scrollBob 2.5s ease-in-out infinite;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.scrollLine {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, $teal-light, transparent);
+}
+
+.scrollText {
+  color: rgba($cream, 0.6) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+@keyframes scrollBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}

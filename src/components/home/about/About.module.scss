@@ -1,0 +1,254 @@
+$teal-dark:  #0d5c63;
+$teal-light: #4aadaa;
+$cream:      #e8e4df;
+$white:      #ffffff;
+$black:      #0a0a0a;
+$gray:       #6b7280;
+
+.section {
+  position: relative;
+  background-color: $white;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  overflow: hidden;
+}
+
+.bgTexture {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba($teal-light, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba($teal-dark, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.label {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase;
+  color: $teal-light !important;
+  white-space: nowrap;
+}
+
+.labelLine {
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: $teal-light;
+  opacity: 0.4;
+}
+
+.grid {
+  align-items: center;
+  margin-bottom: clamp(3rem, 6vw, 6rem) !important;
+}
+
+.textCol {
+  padding-right: clamp(1rem, 4vw, 5rem) !important;
+
+  @media (max-width: 1199px) {
+    padding-right: 1rem !important;
+    margin-bottom: 3rem;
+  }
+}
+
+.heading {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: clamp(2rem, 4.5vw, 3.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  color: $black !important;
+  text-transform: uppercase;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.headingAccent {
+  color: $teal-dark;
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: $teal-light;
+  margin-bottom: 1.75rem;
+  border-radius: 2px;
+}
+
+.body {
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+  color: $gray !important;
+  margin-bottom: 1.25rem !important;
+
+  &:last-of-type {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid rgba($black, 0.08);
+  border-bottom: 1px solid rgba($black, 0.08);
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNumber {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 1.75rem !important;
+  font-weight: 900 !important;
+  color: $teal-dark !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.statLabel {
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em !important;
+  color: $gray !important;
+  font-weight: 600 !important;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba($black, 0.12);
+}
+
+.imageCol {
+  padding-left: clamp(1rem, 4vw, 3rem) !important;
+
+  @media (max-width: 1199px) {
+    padding-left: 1rem !important;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  height: 520px;
+
+  @media (max-width: 599px) {
+    height: 340px;
+  }
+}
+
+.imagePrimary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5rem;
+  bottom: 4rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba($black, 0.18);
+
+  @media (max-width: 599px) {
+    right: 3rem;
+    bottom: 3rem;
+  }
+}
+
+.imageSecondary {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  height: 52%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  border: 5px solid $white;
+  box-shadow: 0 12px 40px rgba($black, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 3.5rem;
+  background: $teal-dark;
+  color: $white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba($teal-dark, 0.4);
+
+  @media (max-width: 599px) {
+    display: none;
+  }
+}
+
+.badgeText {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+  line-height: 1.4 !important;
+  color: $cream !important;
+}
+
+.valuesGrid {
+  border-top: 1px solid rgba($black, 0.07);
+  padding-top: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+.valueCard {
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba($black, 0.07);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: $white;
+  height: 100%;
+
+  &:hover {
+    border-color: $teal-light;
+    box-shadow: 0 8px 32px rgba($teal-light, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+.valueIcon {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+  display: block;
+}
+
+.valueTitle {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em !important;
+  color: $teal-dark !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.valueDesc {
+  font-size: 0.875rem !important;
+  line-height: 1.7 !important;
+  color: $gray !important;
+}

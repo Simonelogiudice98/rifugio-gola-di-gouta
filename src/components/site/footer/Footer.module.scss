@@ -1,0 +1,234 @@
+$teal-dark:  #0d5c63;
+$teal-light: #4aadaa;
+$cream:      #e8e4df;
+$white:      #ffffff;
+$black:      #0a0a0a;
+
+.footer {
+  position: relative;
+  background-color: $teal-dark;
+  color: $white;
+  padding-bottom: 0;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba($teal-light, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba($black, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+}
+
+.waveDivider {
+  width: 100%;
+  line-height: 0;
+  margin-bottom: -1px;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 60px;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(3rem, 6vw, 5rem) !important;
+}
+
+.grid {
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.logo {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.brandDesc {
+  font-size: 0.875rem !important;
+  line-height: 1.75 !important;
+  color: rgba($cream, 0.7) !important;
+  max-width: 300px;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.socialBtn {
+  width: 40px !important;
+  height: 40px !important;
+  border: 1px solid rgba($white, 0.2) !important;
+  border-radius: 4px !important;
+  color: rgba($white, 0.7) !important;
+  transition: all 0.25s ease !important;
+
+  &:hover {
+    background-color: $teal-light !important;
+    border-color: $teal-light !important;
+    color: $white !important;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    font-size: 1.1rem;
+  }
+}
+
+.colTitle {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  color: $teal-light !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba($white, 0.1);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba($cream, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 0.2rem 0;
+
+  &:hover {
+    color: $white;
+
+    .linkArrow {
+      transform: translateX(4px);
+      color: $teal-light;
+    }
+  }
+}
+
+.linkArrow {
+  font-size: 0.8rem;
+  color: rgba($teal-light, 0.6);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.contactIcon {
+  color: $teal-light;
+  margin-top: 1px;
+  flex-shrink: 0;
+
+  svg {
+    font-size: 1rem !important;
+  }
+}
+
+.contactText {
+  font-size: 0.875rem !important;
+  color: rgba($cream, 0.75) !important;
+  line-height: 1.5 !important;
+}
+
+.seasonBox {
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.1);
+  border-left: 3px solid $teal-light;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.seasonTitle {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  color: $teal-light !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.seasonText {
+  font-size: 0.82rem !important;
+  color: rgba($cream, 0.7) !important;
+  line-height: 1.7 !important;
+}
+
+.divider {
+  border-color: rgba($white, 0.1) !important;
+  margin: 0 !important;
+}
+
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem 0;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: 0.78rem !important;
+  color: rgba($cream, 0.45) !important;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bottomLink {
+  font-size: 0.78rem;
+  color: rgba($cream, 0.45);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $teal-light;
+  }
+}
+
+.bottomDot {
+  color: rgba($cream, 0.25);
+  font-size: 0.78rem;
+}

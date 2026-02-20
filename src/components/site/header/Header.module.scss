@@ -1,0 +1,444 @@
+$teal-dark:  #0d5c63;
+$teal-light: #4aadaa;
+$cream:      #e8e4df;
+$white:      #ffffff;
+$black:      #0a0a0a;
+
+.appBar {
+  background: $teal-dark !important;
+  border-bottom: 1px solid rgba($teal-light, 0.12) !important;
+  transition: background 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease !important;
+}
+
+.scrolled {
+  background: rgba($teal-dark, 0.96) !important;
+  border-bottom-color: rgba($teal-light, 0.3) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 24px rgba($black, 0.25) !important;
+}
+
+.toolbar {
+  width: 100%;
+  padding: 0 clamp(1rem, 3vw, 2.5rem) !important;
+  min-height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  @media (max-width: 600px) {
+    min-height: 64px !important;
+  }
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoWrapper {
+  position: relative;
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(44px, 6vw, 72px);
+  margin:0.3rem 0;
+}
+
+.altitudeTag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.altitudeText {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase;
+  color: rgba($cream, 0.55) !important;
+  white-space: nowrap;
+}
+
+.altitudeLine {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba($teal-light, 0.4);
+}
+
+.controls {
+  display: flex !important;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.socialBtn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: rgba($white, 0.06);
+  border: 1px solid rgba($white, 0.1);
+  color: rgba($white, 0.65);
+  text-decoration: none;
+  transition: all 180ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba($teal-light, 0.12);
+    border-color: $teal-light;
+    color: $teal-light;
+  }
+}
+
+.ig:hover { border-color: rgba(225,48,108,0.7) !important; color: rgba(225,48,108,1) !important; background: rgba(225,48,108,0.08) !important; }
+.fb:hover { border-color: rgba(24,119,242,0.7) !important; color: rgba(24,119,242,1) !important; background: rgba(24,119,242,0.08) !important; }
+.wa:hover { border-color: rgba(37,211,102,0.7) !important; color: rgba(37,211,102,1) !important; background: rgba(37,211,102,0.08) !important; }
+
+.menuBtn {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba($white, 0.15) !important;
+  background: rgba($white, 0.05) !important;
+  color: $white !important;
+  cursor: pointer;
+  transition: all 200ms ease !important;
+  margin-left: 8px;
+
+  &:hover {
+    background: rgba($teal-light, 0.12) !important;
+    border-color: rgba($teal-light, 0.5) !important;
+
+    .burgerLine {
+      background: $teal-light;
+    }
+
+    .menuBtnLabel {
+      color: $teal-light;
+    }
+  }
+}
+
+.burgerIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 20px;
+}
+
+.burgerLine {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: rgba($white, 0.85);
+  border-radius: 2px;
+  transition: background 200ms ease;
+}
+
+.burgerLineShort {
+  width: 65%;
+}
+
+.menuBtnLabel {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  color: rgba($white, 0.85) !important;
+  transition: color 200ms ease !important;
+}
+
+.overlay {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(150deg, rgba($teal-dark, 0.98) 0%, rgba(4, 20, 22, 0.99) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.overlayBgGlow {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba($teal-light, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.accentBar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, $teal-light 0%, rgba($teal-dark, 0.3) 100%);
+  z-index: 1;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 1;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity=".8"/></svg>');
+}
+
+.mountainSilhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.overlayTopBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba($teal-light, 0.1);
+}
+
+.overlayLogoLink {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.overlayLogoWrapper {
+  position: relative;
+  width: 180px;
+  height: 68px;
+
+  @media (max-width: 600px) {
+    width: 140px;
+    height: 52px;
+  }
+}
+
+.closeBtn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba($white, 0.15) !important;
+  background: rgba($white, 0.05) !important;
+  color: rgba($white, 0.8) !important;
+  transition: all 200ms ease !important;
+  margin-left: 8px;
+
+  &:hover {
+    background: rgba($teal-light, 0.15) !important;
+    border-color: $teal-light !important;
+    color: $teal-light !important;
+    transform: rotate(90deg);
+  }
+}
+
+.navArea {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  gap: 4rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    overflow-y: auto;
+  }
+}
+
+.navLeft {
+  flex: 1;
+}
+
+.navEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrowText {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: rgba($teal-light, 0.7) !important;
+}
+
+.eyebrowLine {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: rgba($teal-light, 0.4);
+}
+
+.navItem {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem;
+  padding: 0.85rem 0 !important;
+  border-bottom: 1px solid rgba($white, 0.05) !important;
+  text-align: left !important;
+  transition: all 200ms ease !important;
+  border-radius: 0 !important;
+
+  &:last-child {
+    border-bottom: none !important;
+  }
+
+  &:hover {
+    padding-left: 0.5rem !important;
+
+    .navNumber { color: $teal-light; }
+    .navLinkLabel { color: $white; }
+    .navArrow { opacity: 1; transform: translateX(0); color: $teal-light; }
+  }
+}
+
+.navItemActive {
+  .navLinkLabel { color: $teal-light !important; }
+  .navNumber { color: rgba($teal-light, 0.6) !important; }
+}
+
+.navItemDimmed {
+  opacity: 0.3;
+}
+
+.navNumber {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  color: rgba($teal-light, 0.4) !important;
+  min-width: 24px;
+  transition: color 200ms ease !important;
+}
+
+.navLinkLabel {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: clamp(1.6rem, 4vw, 2.8rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+  color: rgba($white, 0.75) !important;
+  line-height: 1 !important;
+  transition: color 200ms ease !important;
+}
+
+.navArrow {
+  font-size: 1.2rem;
+  color: $teal-light;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 200ms ease;
+  margin-left: auto;
+  padding-right: 0.5rem;
+}
+
+.navRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 220px;
+
+  @media (max-width: 900px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: unset;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.infoCard {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba($teal-light, 0.15);
+  border-left: 3px solid $teal-light;
+  border-radius: 4px;
+  background: rgba($white, 0.03);
+
+  @media (max-width: 900px) {
+    flex: 1;
+    min-width: 160px;
+  }
+}
+
+.infoCardTitle {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  color: $teal-light !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.infoCardText {
+  font-size: 0.8rem !important;
+  line-height: 1.7 !important;
+  color: rgba($cream, 0.6) !important;
+}
+
+.overlayBottomBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid rgba($teal-light, 0.08);
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+}
+
+.overlayBottomText {
+  font-size: 0.7rem !important;
+  color: rgba($cream, 0.3) !important;
+  letter-spacing: 0.08em !important;
+}
