@@ -204,8 +204,8 @@ export default function Header() {
                       disableRipple
                       className={`${s.navItem} ${active ? s.navItemActive : ""} ${isDimmed ? s.navItemDimmed : ""}`}
                       onClick={() => {
+                        router.push(link.href);
                         setOpen(false);
-                        setTimeout(() => router.push(link.href), 300);
                       }}
                       onMouseEnter={() => setHoveredIndex(i)}
                       onMouseLeave={() => setHoveredIndex(null)}
