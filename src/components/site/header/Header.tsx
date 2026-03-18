@@ -4,8 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import {useState, useEffect } from "react";
-
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -33,13 +32,15 @@ const Transition = React.forwardRef(function Transition(
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "Chi Siamo" },
-  { href: "/#pernottamento", label: "Pernottamento" },
-  { href: "/#ristorazione", label: "Ristorazione" },
+  { href: "/dormire", label: "Dormire" },
+  { href: "/mangiare", label: "Mangiare" },
   { href: "/#escursioni", label: "Escursioni" },
   { href: "/#contatti", label: "Contatti" },
 ];
 
 const menuNumbers = ["01", "02", "03", "04", "05", "06"];
+
+const YEAR = new Date().getFullYear();
 
 export default function Header() {
   const pathname = usePathname();
@@ -51,11 +52,6 @@ export default function Header() {
   const closeBtnRef = React.useRef<HTMLButtonElement | null>(null);
 
   const scrolled = useScrollTrigger({ disableHysteresis: true, threshold: 24 });
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
 
   const currentPath = pathname.replace(/\/$/, "");
 
@@ -72,7 +68,7 @@ export default function Header() {
             <Box className={s.logoWrapper}>
               <Image
                 src="/images/logo.svg"
-                alt="Rifugio Gola di Gouta"
+                alt="Rifugio Gouta"
                 fill
                 priority
                 style={{ objectFit: "contain" }}
@@ -83,7 +79,7 @@ export default function Header() {
           <Box className={s.altitudeTag}>
             <span className={s.altitudeLine} />
             <Typography className={s.altitudeText}>
-              1.840 m s.l.m. · Gouta, Pigna (IM)
+              1.100 m s.l.m. · Sella di Gouta, Pigna (IM)
             </Typography>
             <span className={s.altitudeLine} />
           </Box>
@@ -156,7 +152,7 @@ export default function Header() {
               <Box className={s.overlayLogoWrapper}>
                 <Image
                   src="/images/logo.svg"
-                  alt="Rifugio Gola di Gouta"
+                  alt="Rifugio Gouta"
                   fill
                   priority
                   style={{ objectFit: "contain" }}
@@ -204,10 +200,13 @@ export default function Header() {
 
                   return (
                     <ButtonBase
-                      key={link.href + link.label}
+                      key={link.href}
                       disableRipple
                       className={`${s.navItem} ${active ? s.navItemActive : ""} ${isDimmed ? s.navItemDimmed : ""}`}
-                      onClick={() => { setOpen(false); router.push(link.href); }}
+                      onClick={() => {
+                        setOpen(false);
+                        setTimeout(() => router.push(link.href), 300);
+                      }}
                       onMouseEnter={() => setHoveredIndex(i)}
                       onMouseLeave={() => setHoveredIndex(null)}
                     >
@@ -222,9 +221,9 @@ export default function Header() {
 
             <Box className={s.navRight}>
               {[
-                { title: "Dove Siamo", text: "Gouta, Pigna (IM)\nAlpi Liguri · 1.840 m s.l.m." },
+                { title: "Dove Siamo", text: "Sella di Gouta, Pigna (IM)\nAlpi Liguri · 1.100 m s.l.m." },
                 { title: "Stagione", text: "Giugno — Ottobre\nInvernale su prenotazione" },
-                { title: "Contatti", text: "+39 000 000 0000\ninfo@rifugiogolаdigouta.it" },
+                { title: "Contatti", text: "[NUMERO DA INSERIRE]\n[EMAIL DA INSERIRE]" },
               ].map((card) => (
                 <Box key={card.title} className={s.infoCard}>
                   <Typography className={s.infoCardTitle}>{card.title}</Typography>
@@ -240,10 +239,10 @@ export default function Header() {
 
           <Box className={s.overlayBottomBar}>
             <Typography className={s.overlayBottomText}>
-              © {new Date().getFullYear()} Rifugio Gola di Gouta
+              © {YEAR} Rifugio Gouta
             </Typography>
             <Typography className={s.overlayBottomText}>
-              Gestione Familiare · Alpi Liguri
+              Gestione Familiare · Parco Alpi Liguri
             </Typography>
           </Box>
         </Box>

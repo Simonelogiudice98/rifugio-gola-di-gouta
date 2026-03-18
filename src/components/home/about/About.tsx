@@ -12,21 +12,21 @@ const values = [
   },
   {
     icon: "🍽️",
-    title: "Cucina Tipica",
+    title: "Cucina di Montagna",
     description:
-      "Piatti della tradizione ligure e piemontese preparati con prodotti locali e stagionali. Sapori genuini di montagna.",
+      "Il menu cambia con le stagioni e i prodotti del territorio. Il sabato e la domenica offriamo un menu completo — e su prenotazione cuciniamo anche per gruppi ed eventi.",
   },
   {
     icon: "🛏️",
-    title: "Camere Accoglienti",
+    title: "Camerate Accoglienti",
     description:
-      "Sistemazioni confortevoli per rigenerarsi dopo una giornata tra i sentieri. Semplicità alpina e tutto il necessario.",
+      "Tre camerate da 7 posti con letti a castello, doccia calda gratuita e Wi-Fi. Semplice, autentico e tutto quello che serve dopo una giornata in montagna.",
   },
   {
-    icon: "🏔️",
+    icon: "🌲",
     title: "Natura Incontaminata",
     description:
-      "Immersi nel cuore delle Alpi Liguri, a Gouta di Pigna, un angolo selvaggio e autentico tra boschi e vette.",
+      "Nel cuore del Bosco di Gouta, tra abeti bianchi, faggi e pini silvestri del Parco Naturale Regionale delle Alpi Liguri. Un angolo selvaggio a poca distanza dal mare.",
   },
 ];
 
@@ -47,39 +47,39 @@ export default function About() {
             <Typography variant="h2" className={styles.heading}>
               Un rifugio di famiglia
               <br />
-              <span className={styles.headingAccent}>nel cuore delle Alpi Liguri</span>
+              <span className={styles.headingAccent}>nel cuore del Bosco di Gouta</span>
             </Typography>
 
             <Box className={styles.divider} />
 
             <Typography className={styles.body}>
-              Siamo una famiglia innamorata della montagna e di questo angolo
-              straordinario delle Alpi Liguri. Il Rifugio Gola di Gouta nasce
-              dal desiderio di condividere la bellezza di questi luoghi con chi
-              cerca autenticità, silenzio e buona tavola.
+              Benvenuti al Rifugio Gouta, nel cuore del Bosco di Gouta, a 1.100 metri
+              di quota sopra Pigna, in quella Val Nervia che profuma ancora di resina
+              e silenzio. Tra gli abeti bianchi, i faggi e i pini silvestri del Parco
+              Naturale Regionale delle Alpi Liguri, troverete un posto dove tirare il
+              fiato, mangiare bene e dormire con il rumore del vento tra i rami.
             </Typography>
 
             <Typography className={styles.body}>
-              Situati a Gouta, nel comune di Pigna (IM), vi accogliamo con la
-              semplicità e il calore tipici della nostra terra: cucina
-              genuina, camere confortevoli e la voglia di farvi sentire
-              a casa, anche a 1.840 metri di quota.
+              Che siate escursionisti di passaggio, famiglie in cerca di una domenica
+              diversa o ciclisti arrivati fin lassù a forza di gambe — siete nel posto
+              giusto. Vi aspettiamo.
             </Typography>
 
             <Box className={styles.statsRow}>
               <Box className={styles.stat}>
-                <Typography className={styles.statNumber}>1.840</Typography>
+                <Typography className={styles.statNumber}>1.100</Typography>
                 <Typography className={styles.statLabel}>m s.l.m.</Typography>
               </Box>
               <Box className={styles.statDivider} />
               <Box className={styles.stat}>
-                <Typography className={styles.statNumber}>100%</Typography>
-                <Typography className={styles.statLabel}>Familiare</Typography>
+                <Typography className={styles.statNumber}>3</Typography>
+                <Typography className={styles.statLabel}>Camerate · 21 posti</Typography>
               </Box>
               <Box className={styles.statDivider} />
               <Box className={styles.stat}>
                 <Typography className={styles.statNumber}>Pigna</Typography>
-                <Typography className={styles.statLabel}>Imperia, Liguria</Typography>
+                <Typography className={styles.statLabel}>Val Nervia, Liguria</Typography>
               </Box>
             </Box>
           </Grid>

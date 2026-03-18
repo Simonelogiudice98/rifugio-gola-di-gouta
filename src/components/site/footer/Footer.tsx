@@ -19,21 +19,22 @@ import styles from "./Footer.module.scss";
 
 const links = [
   { label: "Chi Siamo", href: "#about" },
-  { label: "Pernottamento", href: "#pernottamento" },
-  { label: "Ristorazione", href: "#ristorazione" },
+  { label: "Dormire", href: "/dormire" },
+  { label: "Mangiare", href: "/mangiare" },
   { label: "Escursioni", href: "#escursioni" },
-  { label: "Galleria", href: "#galleria" },
   { label: "Contatti", href: "#contatti" },
 ];
 
 const contacts = [
   {
     icon: <LocationOnIcon fontSize="small" />,
-    text: "Gouta, Pigna (IM) — Liguria",
+    text: "Sella di Gouta, Pigna (IM) — Liguria",
   },
-  { icon: <PhoneIcon fontSize="small" />, text: "+39 000 000 0000" },
-  { icon: <EmailIcon fontSize="small" />, text: "info@rifugiogolаdigouta.it" },
+  { icon: <PhoneIcon fontSize="small" />, text: "[NUMERO DA INSERIRE]" },
+  { icon: <EmailIcon fontSize="small" />, text: "[EMAIL DA INSERIRE]" },
 ];
+
+const YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -58,7 +59,7 @@ export default function Footer() {
               <Box sx={{ position: "relative", width: 200, height: 80 }}>
                 <Image
                   src="/images/logo.svg"
-                  alt="Rifugio Gola di Gouta"
+                  alt="Rifugio Gouta"
                   fill
                   priority
                   unoptimized
@@ -66,9 +67,9 @@ export default function Footer() {
                 />
               </Box>
               <Typography className={styles.brandDesc}>
-                Un rifugio di famiglia nel cuore delle Alpi Liguri, a Gouta di
-                Pigna. Accoglienza autentica, cucina tipica e natura
-                incontaminata a 1.840 m s.l.m.
+                Un rifugio di famiglia nel cuore del Bosco di Gouta, sopra Pigna
+                nella Val Nervia. Accoglienza autentica, cucina tipica e natura
+                incontaminata a 1.100 m s.l.m.
               </Typography>
               <Box className={styles.socials}>
                 <IconButton
@@ -126,7 +127,7 @@ export default function Footer() {
 
             <Box className={styles.seasonBox}>
               <Typography className={styles.seasonTitle}>
-                Stagione 2025
+                Stagione {YEAR}
               </Typography>
               <Typography className={styles.seasonText}>
                 Apertura: Giugno — Ottobre
@@ -141,8 +142,7 @@ export default function Footer() {
 
         <Box className={styles.bottomBar}>
           <Typography className={styles.copyright}>
-            © {new Date().getFullYear()} Rifugio Gola di Gouta — Tutti i diritti
-            riservati
+            © {YEAR} Rifugio Gouta — Tutti i diritti riservati
           </Typography>
           <Box className={styles.bottomLinks}>
             <a href="#" className={styles.bottomLink}>
