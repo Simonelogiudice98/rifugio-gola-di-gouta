@@ -26,7 +26,6 @@ $gray:       #6b7280;
   z-index: 1;
 }
 
-// ── Label row ──────────────────────────────────────
 .labelRow {
   display: flex;
   align-items: center;
@@ -52,7 +51,6 @@ $gray:       #6b7280;
   opacity: 0.4;
 }
 
-// ── Intro ──────────────────────────────────────────
 .introBlock {
   text-align: center;
   max-width: 680px;
@@ -80,7 +78,6 @@ $gray:       #6b7280;
   color: $gray !important;
 }
 
-// ── Quando card ────────────────────────────────────
 .quandoCard {
   padding: 2rem 1.75rem;
   border: 1px solid rgba($black, 0.08);
@@ -130,7 +127,6 @@ $gray:       #6b7280;
   color: $gray !important;
 }
 
-// ── Menu card ──────────────────────────────────────
 .menuNotice {
   background: rgba($teal-light, 0.06);
   border: 1px solid rgba($teal-light, 0.2);
@@ -205,7 +201,6 @@ $gray:       #6b7280;
   font-weight: 500 !important;
 }
 
-// ── Valori cucina ──────────────────────────────────
 .valoreCard {
   padding: 1.75rem 1.5rem;
   border: 1px solid rgba($black, 0.07);
@@ -244,7 +239,6 @@ $gray:       #6b7280;
   color: $gray !important;
 }
 
-// ── Intolleranze ───────────────────────────────────
 .intoleranceNote {
   background: rgba($teal-light, 0.06);
   border: 1px solid rgba($teal-light, 0.2);
@@ -265,7 +259,6 @@ $gray:       #6b7280;
   }
 }
 
-// ── CTA block ──────────────────────────────────────
 .ctaBlock {
   position: relative;
   background: linear-gradient(150deg, $teal-dark 0%, darken($teal-dark, 10%) 100%);
@@ -348,6 +341,25 @@ $gray:       #6b7280;
     background: lighten($teal-light, 6%);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba($teal-light, 0.35);
+  }
+}
+.pranzoNote {
+  background: rgba($teal-light, 0.06);
+  border: 1px solid rgba($teal-light, 0.2);
+  border-left: 3px solid $teal-light;
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pranzoText {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: $gray !important;
+
+  strong {
+    color: $teal-dark;
+    font-weight: 700;
   }
 }
 

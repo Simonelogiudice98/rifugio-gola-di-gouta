@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import DiningHero from "@/components/dining/DiningHero";
-import DiningContent from "@/components/dining/DiningContent";
+import DiningHero from "@/components/dining/diningHero/DiningHero";
+import DiningContent from "@/components/dining/diningContent/DiningContent";
 
 export const metadata = {
   title: "Mangiare — Rifugio Gouta",

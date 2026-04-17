@@ -10,15 +10,14 @@ export default function AccommodationContent() {
   return (
     <Box component="section" className={styles.section}>
       <Box className={styles.bgTexture} />
-
       <Container maxWidth="xl" className={styles.container}>
 
+        {/* ── Camerate ── */}
         <Box className={styles.labelRow}>
           <span className={styles.labelLine} />
           <Typography className={styles.label}>Le camerate</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Grid container spacing={4} className={styles.camerateGrid}>
           {[1, 2, 3].map((n) => (
             <Grid size={{ xs: 12, md: 4 }} key={n}>
@@ -29,9 +28,8 @@ export default function AccommodationContent() {
                     Camerata {n === 1 ? "A" : n === 2 ? "B" : "C"}
                   </Typography>
                   <Typography className={styles.camerataDesc}>
-                    7 posti letto con letti a castello comodi e caldi. Il posto
-                    perfetto per chi cerca un riparo autentico dopo una giornata
-                    tra i sentieri del Parco Alpi Liguri.
+                    7 posti letto con letti a castello comodi e caldi. Il posto perfetto per chi
+                    cerca un riparo autentico dopo una giornata tra i sentieri del Parco Alpi Liguri.
                   </Typography>
                   <Box className={styles.camerataMeta}>
                     <span className={styles.metaTag}>7 posti</span>
@@ -44,54 +42,12 @@ export default function AccommodationContent() {
           ))}
         </Grid>
 
-        <Box className={styles.labelRow} sx={{ marginTop: "clamp(3.5rem, 7vw, 6rem) !important" }}>
-          <span className={styles.labelLine} />
-          <Typography className={styles.label}>Ristorazione</Typography>
-          <span className={styles.labelLine} />
-        </Box>
-
-        <Grid container spacing={4} sx={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box className={styles.ristoCard}>
-              <Typography className={styles.ristoIcon}>🍽️</Typography>
-              <Box>
-                <Typography className={styles.ristoTitle}>Domenica &amp; Giorni Festivi</Typography>
-                <Typography className={styles.ristoDesc}>
-                  Il pranzo vi aspetta con il nostro speciale <strong>Menù Fisso</strong>, pensato
-                  per farvi assaporare i piatti della tradizione ligure.
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box className={styles.ristoCard}>
-              <Typography className={styles.ristoIcon}>🧀</Typography>
-              <Box>
-                <Typography className={styles.ristoTitle}>Giorni Feriali</Typography>
-                <Typography className={styles.ristoDesc}>
-                  La cucina resta attiva con <strong>taglieri di salumi e formaggi locali</strong> e
-                  sfiziosi panini. Siete un gruppo? Su prenotazione concordiamo menù fissi
-                  personalizzati anche durante la settimana.
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-
-        <Box className={styles.pranzoNote}>
-          <Typography className={styles.pranzoText}>
-            🎒 <strong>Zaino in spalla e senza pensieri:</strong> su prenotazione, prepariamo i
-            vostri panini per il pranzo al sacco del giorno dopo! Ordinali il giorno prima e
-            ritirali pronti per la tua escursione.
-          </Typography>
-        </Box>
-
+        {/* ── Tariffe pernotto ── */}
         <Box className={styles.labelRow} sx={{ marginTop: "clamp(3.5rem, 7vw, 6rem) !important" }}>
           <span className={styles.labelLine} />
           <Typography className={styles.label}>Tariffe pernotto</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Box className={styles.prezziBlock} sx={{ marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
           <Box className={styles.prezziGlow} />
           <Box className={styles.prezziTable}>
@@ -102,9 +58,7 @@ export default function AccommodationContent() {
               >
                 <Box>
                   <Typography className={styles.prezziVoce}>{p.voce}</Typography>
-                  {p.note && (
-                    <Typography className={styles.prezziNoteInline}>{p.note}</Typography>
-                  )}
+                  {p.note && <Typography className={styles.prezziNoteInline}>{p.note}</Typography>}
                 </Box>
                 <Typography className={styles.prezziPrezzo}>{p.prezzo}</Typography>
               </Box>
@@ -112,13 +66,12 @@ export default function AccommodationContent() {
           </Box>
         </Box>
 
-        {/* ── Biancheria ── */}
+        {/* ── Cosa portare ── */}
         <Box className={styles.labelRow} sx={{ marginTop: "clamp(3.5rem, 7vw, 6rem) !important" }}>
           <span className={styles.labelLine} />
           <Typography className={styles.label}>Cosa portare</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Grid container spacing={4} sx={{ marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
           {biancheria.map((item) => (
             <Grid size={{ xs: 12, md: 6 }} key={item.title}>
@@ -139,7 +92,6 @@ export default function AccommodationContent() {
           <Typography className={styles.label}>Kit noleggio biancheria</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Box className={styles.prezziBlock} sx={{ marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
           <Box className={styles.prezziGlow} />
           <Box className={styles.prezziTable}>
@@ -150,13 +102,9 @@ export default function AccommodationContent() {
               >
                 <Box>
                   <Typography className={styles.prezziVoce}>{p.voce}</Typography>
-                  {p.note && (
-                    <Typography className={styles.prezziNoteInline}>{p.note}</Typography>
-                  )}
+                  {p.note && <Typography className={styles.prezziNoteInline}>{p.note}</Typography>}
                 </Box>
-                <Box className={styles.prezziRight}>
-                  <Typography className={styles.prezziPrezzo}>{p.prezzo}</Typography>
-                </Box>
+                <Typography className={styles.prezziPrezzo}>{p.prezzo}</Typography>
               </Box>
             ))}
           </Box>
@@ -168,7 +116,6 @@ export default function AccommodationContent() {
           <Typography className={styles.label}>Prezzi al pubblico</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Box className={styles.prezziBlock}>
           <Box className={styles.prezziGlow} />
           <Box className={styles.prezziTable}>
@@ -190,7 +137,6 @@ export default function AccommodationContent() {
           <Typography className={styles.label}>Servizi inclusi</Typography>
           <span className={styles.labelLine} />
         </Box>
-
         <Grid container spacing={3} sx={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
           {servizi.map((s) => (
             <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={s.title}>
@@ -220,7 +166,7 @@ export default function AccommodationContent() {
             </Typography>
             <Box className={styles.ctaButtons}>
               <Link
-                href="https://wa.me/393480305996"
+                href="https://wa.me/390000000000"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.ctaBtnPrimary}

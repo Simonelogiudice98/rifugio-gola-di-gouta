@@ -3,83 +3,8 @@
 import { Box, Typography, Container, Grid } from "@mui/material";
 import Link from "next/link";
 import styles from "./DiningContent.module.scss";
+import { menuEsempio, quando, valoriCucina } from "../DiningConfig";
 
-const quando = [
-  {
-    icon: "📅",
-    title: "Sabato e domenica",
-    desc: "Menu completo disponibile per tutti gli ospiti e i visitatori di passaggio. Prenotazione gradita per organizzarci al meglio.",
-    highlight: true,
-  },
-  {
-    icon: "📞",
-    title: "Durante la settimana",
-    desc: "Su prenotazione. Comitiva, gruppo o voglia di una serata in montagna — contattateci e organizziamo noi.",
-    highlight: false,
-  },
-  {
-    icon: "🎉",
-    title: "Occasioni speciali",
-    desc: "Compleanni, ricorrenze, ritiri di gruppo. Su prenotazione, con anticipo. Scriveteci e costruiamo qualcosa insieme.",
-    highlight: false,
-  },
-];
-
-// Piatti di esempio — da aggiornare con il menu reale
-const menuEsempio = [
-  {
-    categoria: "Antipasti",
-    piatti: [
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-    ],
-  },
-  {
-    categoria: "Primi",
-    piatti: [
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-    ],
-  },
-  {
-    categoria: "Secondi",
-    piatti: [
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-    ],
-  },
-  {
-    categoria: "Dolci",
-    piatti: [
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-      { nome: "[Piatto da definire]", desc: "Prodotto locale · stagionale" },
-    ],
-  },
-];
-
-const valoriCucina = [
-  {
-    icon: "🌿",
-    title: "Prodotti locali",
-    desc: "Ingredienti del territorio ligure, scelti in base alla stagione e alla disponibilità dei produttori della Val Nervia.",
-  },
-  {
-    icon: "🔄",
-    title: "Menu stagionale",
-    desc: "Il menu cambia perché cambiano i prodotti e le stagioni. La cura con cui prepariamo ogni piatto resta sempre la stessa.",
-  },
-  {
-    icon: "🌾",
-    title: "Intolleranze",
-    desc: "Stiamo lavorando per offrire opzioni per celiaci. Segnalate qualsiasi intolleranza al momento della prenotazione.",
-  },
-  {
-    icon: "🎒",
-    title: "Pranzo al sacco",
-    desc: "Ripartite di buon mattino? Su richiesta prepariamo panini e kit energetici. Basta dircelo la sera prima.",
-  },
-];
 
 export default function DiningContent() {
   return (
@@ -87,8 +12,6 @@ export default function DiningContent() {
       <Box className={styles.bgTexture} />
 
       <Container maxWidth="xl" className={styles.container}>
-
-        {/* ── Intro ── */}
         <Box className={styles.introBlock}>
           <Box className={styles.labelRow}>
             <span className={styles.labelLine} />
@@ -103,9 +26,9 @@ export default function DiningContent() {
           <Typography className={styles.introBody}>
             In cucina cerchiamo di portarvi il meglio di questo angolo di
             Liguria. Prodotti locali, stagionali, preparati con la semplicità
-            genuina di chi vive la montagna tutto l'anno. Non troverete menu
-            fissi stampati — quello che c'è dipende dal giorno, dalla stagione
-            e da quello che il territorio ha da offrire.
+            genuina di chi vive la montagna tutto l&apos;anno. Non troverete
+            menu fissi stampati, quello che c&apos;è dipende dal giorno, dalla
+            stagione e da quello che il territorio ha da offrire.
           </Typography>
         </Box>
 
@@ -128,8 +51,16 @@ export default function DiningContent() {
           ))}
         </Grid>
 
-        {/* ── Menu di esempio ── */}
-        <Box className={styles.labelRow}>
+        <Box className={styles.pranzoNote}>
+          <Typography className={styles.pranzoText}>
+            🎒 <strong>Zaino in spalla e senza pensieri:</strong> su prenotazione, prepariamo i
+            vostri panini per il pranzo al sacco del giorno dopo! Ordinali il giorno prima e
+            ritirali pronti per la tua escursione.
+          </Typography>
+        </Box>
+
+        {/* ── Menu stagionale ── */}
+        <Box className={styles.labelRow} sx={{ marginTop: "clamp(3.5rem, 7vw, 6rem) !important" }}>
           <span className={styles.labelLine} />
           <Typography className={styles.label}>Menu stagionale</Typography>
           <span className={styles.labelLine} />
@@ -137,8 +68,9 @@ export default function DiningContent() {
 
         <Box className={styles.menuNotice}>
           <Typography className={styles.menuNoticeText}>
-            📋 Il menu cambia ogni settimana in base ai prodotti disponibili. Quello che segue è
-            un esempio indicativo — per il menu aggiornato contattateci prima della visita.
+            📋 Il menu cambia ogni settimana in base ai prodotti disponibili.
+            Quello che segue è un esempio indicativo — per il menu aggiornato
+            contattateci prima della visita.
           </Typography>
         </Box>
 
@@ -178,12 +110,11 @@ export default function DiningContent() {
           ))}
         </Grid>
 
-        {/* ── Intolleranze ── */}
         <Box className={styles.intoleranceNote}>
           <Typography className={styles.intoleranceText}>
-            🌾 <strong>Intolleranze e diete speciali</strong> — Segnalate sempre le vostre
-            esigenze alimentari al momento della prenotazione. Faremo del nostro meglio
-            per venirvi incontro.
+            🌾 <strong>Intolleranze e diete speciali</strong> — Segnalate sempre
+            le vostre esigenze alimentari al momento della prenotazione. Faremo
+            del nostro meglio per venirvi incontro.
           </Typography>
         </Box>
 
@@ -217,7 +148,6 @@ export default function DiningContent() {
             </Box>
           </Box>
         </Box>
-
       </Container>
     </Box>
   );

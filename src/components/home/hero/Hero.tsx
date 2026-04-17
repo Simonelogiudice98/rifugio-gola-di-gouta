@@ -3,25 +3,8 @@
 import { useEffect, useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
 import styles from "./Hero.module.scss";
+import { slides } from "./HeroConfig";
 
-const slides = [
-  {
-    url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
-    alt: "Panorama alpino al tramonto",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
-    alt: "Sentiero di montagna",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1600&q=80",
-    alt: "Rifugio di montagna",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1600&q=80",
-    alt: "Paesaggio invernale alpino",
-  },
-];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
