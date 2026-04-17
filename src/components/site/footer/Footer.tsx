@@ -69,7 +69,7 @@ export default function Footer() {
               <Typography className={styles.brandDesc}>
                 Un rifugio di famiglia nel cuore del Bosco di Gouta, sopra Pigna
                 nella Val Nervia. Accoglienza autentica, cucina tipica e natura
-                incontaminata a 1.100 m s.l.m.
+                incontaminata a 1.200 m s.l.m.
               </Typography>
               <Box className={styles.socials}>
                 <IconButton

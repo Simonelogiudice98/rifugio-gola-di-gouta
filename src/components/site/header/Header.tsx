@@ -79,7 +79,7 @@ export default function Header() {
           <Box className={s.altitudeTag}>
             <span className={s.altitudeLine} />
             <Typography className={s.altitudeText}>
-              1.100 m s.l.m. · Sella di Gouta, Pigna (IM)
+              1.200 m s.l.m. · Sella di Gouta, Pigna (IM)
             </Typography>
             <span className={s.altitudeLine} />
           </Box>
@@ -221,7 +221,7 @@ export default function Header() {
 
             <Box className={s.navRight}>
               {[
-                { title: "Dove Siamo", text: "Sella di Gouta, Pigna (IM)\nAlpi Liguri · 1.100 m s.l.m." },
+                { title: "Dove Siamo", text: "Sella di Gouta, Pigna (IM)\nAlpi Liguri · 1.200 m s.l.m." },
                 { title: "Stagione", text: "Giugno — Ottobre\nInvernale su prenotazione" },
                 { title: "Contatti", text: "[NUMERO DA INSERIRE]\n[EMAIL DA INSERIRE]" },
               ].map((card) => (

@@ -53,7 +53,7 @@ export default function About() {
             <Box className={styles.divider} />
 
             <Typography className={styles.body}>
-              Benvenuti al Rifugio Gouta, nel cuore del Bosco di Gouta, a 1.100 metri
+              Benvenuti al Rifugio Gouta, nel cuore del Bosco di Gouta, a 1.200 metri
               di quota sopra Pigna, in quella Val Nervia che profuma ancora di resina
               e silenzio. Tra gli abeti bianchi, i faggi e i pini silvestri del Parco
               Naturale Regionale delle Alpi Liguri, troverete un posto dove tirare il
@@ -68,7 +68,7 @@ export default function About() {
 
             <Box className={styles.statsRow}>
               <Box className={styles.stat}>
-                <Typography className={styles.statNumber}>1.100</Typography>
+                <Typography className={styles.statNumber}>1.200</Typography>
                 <Typography className={styles.statLabel}>m s.l.m.</Typography>
               </Box>
               <Box className={styles.statDivider} />

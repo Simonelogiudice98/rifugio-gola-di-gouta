@@ -44,7 +44,7 @@ export default function AccommodationHero() {
         </Typography>
 
         <Typography className={styles.subheading}>
-          Tre camerate accoglienti a 1.100 m s.l.m., nel cuore del Bosco di Gouta.
+          Tre camerate accoglienti a 1.200 m s.l.m., nel cuore del Bosco di Gouta.
           <br />
           Letti a castello, doccia calda gratuita e il silenzio dei pini silvestri.
         </Typography>
