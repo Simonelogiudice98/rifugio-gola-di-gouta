@@ -1,5 +1,5 @@
-import AccommodationContent from "@/components/accomodation/AccommodationContent";
-import AccommodationHero from "@/components/accomodation/AccommodationHero";
+import AccommodationContent from "@/components/accomodation/accomodationContent/AccommodationContent";
+import AccommodationHero from "@/components/accomodation/accomodationhero/AccommodationHero";
 import { Box } from "@mui/material";
 
 

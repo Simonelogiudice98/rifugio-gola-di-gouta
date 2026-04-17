@@ -52,7 +52,6 @@ $gray:       #6b7280;
   opacity: 0.4;
 }
 
-// ── Camerate ──────────────────────────────────────
 .camerateGrid {
   margin-bottom: 2rem !important;
 }
@@ -127,7 +126,51 @@ $gray:       #6b7280;
   text-transform: uppercase;
 }
 
-.bambiniNote {
+.ristoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border: 1px solid rgba($black, 0.07);
+  border-radius: 4px;
+  background: $white;
+  height: 100%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $teal-light;
+    box-shadow: 0 8px 32px rgba($teal-light, 0.1);
+  }
+}
+
+.ristoIcon {
+  font-size: 2rem !important;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.ristoTitle {
+  font-family: 'BOSS', 'Impact', 'Arial Black', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em !important;
+  color: $teal-dark !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ristoDesc {
+  font-size: 0.875rem !important;
+  line-height: 1.7 !important;
+  color: $gray !important;
+
+  strong {
+    color: $teal-dark;
+    font-weight: 700;
+  }
+}
+
+.pranzoNote {
   background: rgba($teal-light, 0.06);
   border: 1px solid rgba($teal-light, 0.2);
   border-left: 3px solid $teal-light;
@@ -136,7 +179,7 @@ $gray:       #6b7280;
   margin-bottom: 0.5rem;
 }
 
-.bambiniText {
+.pranzoText {
   font-size: 0.9rem !important;
   line-height: 1.6 !important;
   color: $gray !important;
@@ -147,7 +190,6 @@ $gray:       #6b7280;
   }
 }
 
-// ── Biancheria ─────────────────────────────────────
 .bianqueriaCard {
   display: flex;
   align-items: flex-start;
@@ -187,7 +229,6 @@ $gray:       #6b7280;
   color: $gray !important;
 }
 
-// ── Servizi ────────────────────────────────────────
 .servizioCard {
   padding: 1.75rem 1.5rem;
   border: 1px solid rgba($black, 0.07);
@@ -226,7 +267,6 @@ $gray:       #6b7280;
   color: $gray !important;
 }
 
-// ── Prezzi ─────────────────────────────────────────
 .prezziBlock {
   position: relative;
   border: 1px solid rgba($teal-light, 0.2);
@@ -274,10 +314,31 @@ $gray:       #6b7280;
   border-bottom: none;
 }
 
+.prezziRowHighlight {
+  background: rgba($teal-light, 0.05);
+
+  .prezziVoce {
+    color: $teal-dark !important;
+    font-weight: 700 !important;
+  }
+
+  .prezziPrezzo {
+    color: $teal-light !important;
+    font-size: 1.15rem !important;
+  }
+}
+
 .prezziVoce {
   font-size: 0.9rem !important;
   font-weight: 600 !important;
   color: $black !important;
+}
+
+.prezziNoteInline {
+  font-size: 0.75rem !important;
+  color: $gray !important;
+  line-height: 1.5 !important;
+  margin-top: 0.2rem !important;
 }
 
 .prezziRight {
@@ -293,6 +354,7 @@ $gray:       #6b7280;
   font-weight: 900 !important;
   color: $teal-dark !important;
   letter-spacing: 0.02em !important;
+  flex-shrink: 0;
 }
 
 .prezziNote {
@@ -315,7 +377,6 @@ $gray:       #6b7280;
   line-height: 1.6 !important;
 }
 
-// ── CTA block ──────────────────────────────────────
 .ctaBlock {
   position: relative;
   background: linear-gradient(150deg, $teal-dark 0%, darken($teal-dark, 10%) 100%);

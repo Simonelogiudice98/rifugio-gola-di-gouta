@@ -21,6 +21,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import s from "./Header.module.scss";
 import { socials } from "@/lib/utils";
+import { navLinks } from "../siteConfig";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
@@ -28,15 +29,6 @@ const Transition = React.forwardRef(function Transition(
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/#about", label: "Chi Siamo" },
-  { href: "/dormire", label: "Dormire" },
-  { href: "/mangiare", label: "Mangiare" },
-  { href: "/#escursioni", label: "Escursioni" },
-  { href: "/#contatti", label: "Contatti" },
-];
 
 const menuNumbers = ["01", "02", "03", "04", "05", "06"];
 

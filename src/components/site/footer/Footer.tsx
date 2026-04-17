@@ -16,22 +16,17 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import Image from "next/image";
 import styles from "./Footer.module.scss";
+import { navLinks } from "../siteConfig";
+import { socials } from "@/lib/utils";
 
-const links = [
-  { label: "Chi Siamo", href: "#about" },
-  { label: "Dormire", href: "/dormire" },
-  { label: "Mangiare", href: "/mangiare" },
-  { label: "Escursioni", href: "#escursioni" },
-  { label: "Contatti", href: "#contatti" },
-];
 
 const contacts = [
   {
     icon: <LocationOnIcon fontSize="small" />,
     text: "Sella di Gouta, Pigna (IM) — Liguria",
   },
-  { icon: <PhoneIcon fontSize="small" />, text: "[NUMERO DA INSERIRE]" },
-  { icon: <EmailIcon fontSize="small" />, text: "[EMAIL DA INSERIRE]" },
+  { icon: <PhoneIcon fontSize="small" />, text: "+39 348 030 5996" },
+  { icon: <EmailIcon fontSize="small" />, text: "rifugiogoladigouta2026@gmail.com " },
 ];
 
 const YEAR = new Date().getFullYear();
@@ -75,7 +70,9 @@ export default function Footer() {
                 <IconButton
                   className={styles.socialBtn}
                   aria-label="Instagram"
-                  href="#"
+                  href={socials.instagram}
+                  target="_blank"
+                  rel="noreferrer"
                   component="a"
                 >
                   <InstagramIcon />
@@ -83,7 +80,9 @@ export default function Footer() {
                 <IconButton
                   className={styles.socialBtn}
                   aria-label="Facebook"
-                  href="#"
+                  href={socials.facebook}
+                  target="_blank"
+                  rel="noreferrer"
                   component="a"
                 >
                   <FacebookIcon />
@@ -91,7 +90,9 @@ export default function Footer() {
                 <IconButton
                   className={styles.socialBtn}
                   aria-label="WhatsApp"
-                  href="#"
+                  href={socials.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
                   component="a"
                 >
                   <WhatsAppIcon />
@@ -103,7 +104,7 @@ export default function Footer() {
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Typography className={styles.colTitle}>Esplora</Typography>
             <Box className={styles.linkList}>
-              {links.map((l) => (
+              {navLinks.map((l) => (
                 <a key={l.label} href={l.href} className={styles.link}>
                   <span className={styles.linkArrow}>→</span>
                   {l.label}
@@ -130,9 +131,9 @@ export default function Footer() {
                 Stagione {YEAR}
               </Typography>
               <Typography className={styles.seasonText}>
-                Apertura: Giugno — Ottobre
+                Apertura dal 1 maggio 2026.
                 <br />
-                Invernale: su prenotazione
+                Nuova gestione.
               </Typography>
             </Box>
           </Grid>
