@@ -7,7 +7,7 @@ import { values } from "./aboutConfig";
 
 export default function About() {
   return (
-    <Box component="section" className={styles.section}>
+    <Box component="section" id="chi-siamo" className={styles.section}>
       <Box className={styles.bgTexture} />
 
       <Container maxWidth="xl" className={styles.container}>

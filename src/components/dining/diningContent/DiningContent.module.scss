@@ -4,7 +4,7 @@ $cream:      #e8e4df;
 $white:      #ffffff;
 $black:      #0a0a0a;
 $gray:       #6b7280;
-
+@use "sass:color";
 .section {
   position: relative;
   background-color: $white;
@@ -261,7 +261,11 @@ $gray:       #6b7280;
 
 .ctaBlock {
   position: relative;
-  background: linear-gradient(150deg, $teal-dark 0%, darken($teal-dark, 10%) 100%);
+  background: linear-gradient(
+  150deg,
+  $teal-dark 0%,
+  color.adjust($teal-dark, $lightness: -10%) 100%
+);
   border-radius: 8px;
   overflow: hidden;
   padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);

@@ -3,7 +3,7 @@ $teal-light: #4aadaa;
 $cream:      #e8e4df;
 $white:      #ffffff;
 $black:      #0a0a0a;
-
+@use "sass:color";
 .hero {
   position: relative;
   min-height: 60vh;
@@ -26,14 +26,15 @@ $black:      #0a0a0a;
   }
 }
 
+
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    150deg,
-    rgba($teal-dark, 0.88) 0%,
-    rgba(darken($teal-dark, 10%), 0.92) 100%
-  );
+   background: linear-gradient(
+  150deg,
+  $teal-dark 0%,
+  color.adjust($teal-dark, $lightness: -10%) 100%
+);
 }
 
 .grain {

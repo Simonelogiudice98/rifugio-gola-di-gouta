@@ -3,6 +3,7 @@ $teal-light: #4aadaa;
 $cream:      #e8e4df;
 $white:      #ffffff;
 $black:      #0a0a0a;
+@use "sass:color";
 
 .appBar {
   background: $teal-dark !important;
@@ -168,12 +169,15 @@ $black:      #0a0a0a;
   color: rgba($white, 0.85) !important;
   transition: color 200ms ease !important;
 }
-
 .overlay {
   position: relative;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(150deg, rgba($teal-dark, 0.98) 0%, rgba(4, 20, 22, 0.99) 100%);
+   background: linear-gradient(
+  150deg,
+  $teal-dark 0%,
+  color.adjust($teal-dark, $lightness: -10%) 100%
+);
   display: flex;
   flex-direction: column;
 }
@@ -188,14 +192,13 @@ $black:      #0a0a0a;
   pointer-events: none;
   z-index: 0;
 }
-
 .accentBar {
   position: absolute;
   right: 0;
   top: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, $teal-light 0%, rgba($teal-dark, 0.3) 100%);
+  background: linear-gradient(180deg, $teal-light 0%, color.adjust($teal-dark, $lightness: -10%) 100%);
   z-index: 1;
 }
 
