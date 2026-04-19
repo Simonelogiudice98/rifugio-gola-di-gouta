@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
 import styles from "./Hero.module.scss";
 import { slides } from "./HeroConfig";
-
+import Link from "next/link";
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -61,11 +61,28 @@ export default function Hero() {
           Un rifugio autentico tra vette e tradizione.
         </Typography>
 
-        <Stack direction={{ xs: "column", sm: "row" }} spacing={2} className={styles.ctas}>
-          <Button variant="contained" size="large" className={styles.btnPrimary}>
-            Prenota il tuo soggiorno
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          className={styles.ctas}
+        >
+          <Button
+            component={Link}
+            href="/dormire"
+            variant="contained"
+            size="large"
+            className={styles.btnPrimary}
+          >
+            Fermati a dormire
           </Button>
-          <Button variant="outlined" size="large" className={styles.btnSecondary}>
+
+          <Button
+            component={Link}
+            href="/escursioni"
+            variant="outlined"
+            size="large"
+            className={styles.btnSecondary}
+          >
             Scopri le escursioni
           </Button>
         </Stack>

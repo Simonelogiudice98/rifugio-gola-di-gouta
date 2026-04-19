@@ -40,7 +40,7 @@ export default function About() {
 
             <Typography className={styles.body}>
               Che siate escursionisti di passaggio, famiglie in cerca di una
-              domenica diversa o ciclisti arrivati fin lassù a forza di gambe —
+              domenica diversa o ciclisti arrivati fin lassù a forza di gambe,
               siete nel posto giusto. Vi aspettiamo.
             </Typography>
 
