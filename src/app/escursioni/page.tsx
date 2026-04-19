@@ -1,3 +1,5 @@
+import ExcursionsContent from "@/components/excursion/excursionContent/ExcursionsContent";
+import ExcursionsHero from "@/components/excursion/excursionHero/ExcursionsHero";
 import { Box } from "@mui/material";
 
 export const metadata = {
@@ -9,7 +11,8 @@ export const metadata = {
 export default function EscursioniPage() {
   return (
     <Box component="main">
-
+      <ExcursionsHero />
+      <ExcursionsContent />
     </Box>
   );
 }

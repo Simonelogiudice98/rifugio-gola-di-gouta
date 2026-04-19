@@ -215,7 +215,7 @@ export default function Header() {
               {[
                 { title: "Dove Siamo", text: "Sella di Gouta, Pigna (IM)\nAlpi Liguri · 1.200 m s.l.m." },
                 { title: "Stagione", text: "Giugno — Ottobre\nInvernale su prenotazione" },
-                { title: "Contatti", text: "[NUMERO DA INSERIRE]\n[EMAIL DA INSERIRE]" },
+                { title: "Contatti", text: `${socials.phone}\n${socials.email}` },
               ].map((card) => (
                 <Box key={card.title} className={s.infoCard}>
                   <Typography className={s.infoCardTitle}>{card.title}</Typography>

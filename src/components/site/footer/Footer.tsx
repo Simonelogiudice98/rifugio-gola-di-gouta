@@ -33,7 +33,7 @@ const YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <Box component="footer" className={styles.footer}>
+    <Box component="footer" className={styles.footer} id="footer">
       <Box className={styles.waveDivider}>
         <svg
           viewBox="0 0 1440 60"

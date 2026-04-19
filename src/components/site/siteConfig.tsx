@@ -3,6 +3,6 @@ export const navLinks = [
   { href: "/#chi-siamo", label: "Chi Siamo" },
   { href: "/dormire", label: "Dormire" },
   { href: "/mangiare", label: "Mangiare" },
-  { href: "/#escursioni", label: "Escursioni" },
+  { href: "/escursioni", label: "Escursioni" },
   { href: "/#contatti", label: "Contatti" },
 ];

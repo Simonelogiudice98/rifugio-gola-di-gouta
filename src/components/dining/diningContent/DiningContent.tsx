@@ -4,6 +4,7 @@ import { Box, Typography, Container, Grid } from "@mui/material";
 import Link from "next/link";
 import styles from "./DiningContent.module.scss";
 import { menuEsempio, quando, valoriCucina } from "../DiningConfig";
+import { socials } from "@/lib/utils";
 
 
 export default function DiningContent() {
@@ -135,14 +136,14 @@ export default function DiningContent() {
             </Typography>
             <Box className={styles.ctaButtons}>
               <Link
-                href="https://wa.me/390000000000"
+                href={socials.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 className={styles.ctaBtnPrimary}
               >
                 💬 Prenota su WhatsApp
               </Link>
-              <Link href="/#contatti" className={styles.ctaBtnSecondary}>
+              <Link href="/#footer" className={styles.ctaBtnSecondary}>
                 Tutti i contatti →
               </Link>
             </Box>

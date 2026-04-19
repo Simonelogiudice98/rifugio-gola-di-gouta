@@ -4,6 +4,7 @@ import { Box, Typography, Container, Grid } from "@mui/material";
 import Link from "next/link";
 import styles from "./AccommodationContent.module.scss";
 import { biancheria, kit, prezziPubblico, servizi, tariffePernotto } from "../accomodationConfig";
+import { socials } from "@/lib/utils";
 
 
 export default function AccommodationContent() {
@@ -166,14 +167,14 @@ export default function AccommodationContent() {
             </Typography>
             <Box className={styles.ctaButtons}>
               <Link
-                href="https://wa.me/390000000000"
+                href={socials.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 className={styles.ctaBtnPrimary}
               >
                 💬 Scrivici su WhatsApp
               </Link>
-              <Link href="/#contatti" className={styles.ctaBtnSecondary}>
+              <Link href="/#footer" className={styles.ctaBtnSecondary}>
                 Tutti i contatti →
               </Link>
             </Box>
