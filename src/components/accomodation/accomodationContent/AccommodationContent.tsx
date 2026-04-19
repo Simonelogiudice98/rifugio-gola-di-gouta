@@ -92,7 +92,7 @@ export default function AccommodationContent() {
           <Grid size={{ xs: 12, md: 5 }}>
             <Box className={styles.camerataCard}>
               <Box className={styles.camerataBody}>
-                <Typography className={styles.camerataTitle}>Camerate A · B · C</Typography>
+                <Typography className={styles.camerataTitle}>Camerate 1 · 2 · 3</Typography>
                 <Typography className={styles.camerataDesc}>
                   Tre camerate accoglienti, ciascuna con 7 posti letto a castello comodi e caldi.
                   Strutture semplici e curate, pensate per il vero escursionista: tutto quello che
