@@ -36,3 +36,9 @@ export const tariffePernotto = [
   { voce: "Mezza pensione", prezzo: "€ 70,00", note: "cena, pernotto e colazione — oppure cena, colazione e pranzo la domenica" },
   { voce: "Pernotto e colazione", prezzo: "€ 55,00", note: "a persona / notte" },
 ];
+
+export const carouselSlides = [
+  { src: "/images/accommodation/camerata1.jpeg", alt: "Camerata — letti a castello" },
+  { src: "/images/accommodation/camerata2.jpeg", alt: "Camerata — dettaglio" },
+  { src: "/images/accommodation/camerata3.jpeg", alt: "Camerata — ambiente" },
+];
